@@ -8,10 +8,98 @@
   --bg: #ffffff;
   --text: #1f2933;
   --muted: #6b7280;
-  --accent: #3a4e3e;
-  --accent-dark: #273428;
-  --card: oklch(88.381% 0.00217 14.644);
+  --accent: #2f4633;
+  --accent-dark: #1f3023;
+  --card: #f7f7f7;
   --radius: 12px;
+  --section-spacing: 5rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+main {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto var(--section-spacing);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skills-grid div {
+  background: var(--card);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 .protein-section {
@@ -23,63 +111,9 @@
 
 #protein {
   width: 320px;
+  max-width: 90%;
   position: sticky;
   top: 1vh;
-  opacity: 0.9;
-  transition: transform 0.1s linear;
-}
-
-h1 {
-  font-weight: 700;
-}
-
-h1, h2{
-    font-family: 'Playfair Display', serif;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-}
-
-header > div header {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-header > div div {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-nav a {
-  font-weight: 500;
-  color: var(--text);
-}
-
-nav a:hover {
-  color: var(--accent);
 }
 
 .button {
@@ -88,7 +122,7 @@ nav a:hover {
   background-color: var(--accent);
   color: white;
   font-weight: 500;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .button:hover {
@@ -100,71 +134,10 @@ nav a:hover {
   background-color: var(--text);
 }
 
-main {
-  padding: 4rem;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto 4rem auto;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-}
-
-.hero p {
-  max-width: 700px;
-  color: var(--muted);
-}
-
-.tagline {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.container nav ul {
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.container nav ul li div {
-  background: var(--card);
-  padding: 0.75rem 1.5rem;
+img {
+  max-width: 100%;
+  height: auto;
   border-radius: var(--radius);
-  box-shadow: 0 10px 25px rgba(41, 41, 41, 0.05);
-  font-weight: 500;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-top: 0.5rem;
-}
-
-.blue-container {
-  background-color: rgb(218, 216, 216);
-  padding: 2rem;
-  border-radius: var(--radius);
-  margin-top: 1.5rem;
-}
-
-.blue-container h3 {
-  margin-bottom: 0.75rem;
-}
-
-.blue-container p {
-  color: var(--muted);
-  margin-bottom: 1rem;
 }
 
 footer {
@@ -172,4 +145,33 @@ footer {
   padding: 2rem;
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  main {
+    padding: 2rem 1.25rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  #protein {
+    width: 200px;
+  }
+
 }
