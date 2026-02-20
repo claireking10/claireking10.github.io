@@ -1,75 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Claire King">
-    <title>Claire King | Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Computational Biophysics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #ffffff;
+  --panel: #c9c9c9;
+  --text: #454545;
+  --muted: #282828;
+  --accent: #e2e2e2;
+  --button: #455948;
+  --buttonaccent: #5b6d5e;
+  --border: #a1a1a1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+section h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h3 {
+  color: #455948;   /* main heading text */
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--button);
+  margin-top: 0.5rem;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(33, 33, 33, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+nav h1 {
+  font-size: 1rem;
+  color: var(--button);
+  letter-spacing: 1px;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+  color: white;
+}
+
+nav a:hover {
+  color: var(--button);
+}
+
+section {
+  padding: 2rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  scroll-margin-top: 100px;
+}
+
+.hero {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--accent);
+}
+
+.hero h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero span {
+  color: var(--button);
+}
+
+.hero p {
+  max-width: 600px;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: var(--button);
+  color: var(--bg);
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--buttonaccent);
+  transform: translateY(-2px);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--button);
+  margin-top: 0.5rem;
+}
+
+.panel {
+  background: var(--panel);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.resume-item {
+  margin-bottom: 1.8rem;
+}
+
+.resume-item h3 {
+  font-size: 1.1rem;
+}
+
+.resume-item span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-content">
-        <div class="logo">Claire King</div> <br>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./resume.html">Resume</a></li>
-                <li><a href="mailto:cking6@trinity.edu" class="button">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<nav>
+  <h1>Claire King</h1>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#resume">Presentations</a></li>
+  </ul>
+</nav>
 
-<main>
+<section class="hero">
+    <img src="./Clairek.jpg" alt="Claire King" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem;">
+  <h3>
+    Claire King
+  </h3>
+  <p>
+    Neuroscience (B.S.) and Computer Science (B.A.) student interested in neuroscience, computing, 
+    and ML-driven drug discovery. Currently looking for graduate school opportunities.
+  </p>
+  <a href="mailto:cking6@trinity.edu" class="btn">Contact Me</a>
+  <br>
+  <a href="./resume.pdf" class="btn">View Resume</a>
+</section>
 
-<section class="hero container">
-    <p class="tagline">Hey, I'm</p>
-    <h1>Claire King</h1>
+<section id="about">
+  <h2>About</h2>
+  
+  <div class="panel">
     <p>
-        Neuroscience (B.S.) and Computer Science (B.A.) student interested in 
-        computational neuroscience, biophysics, and ML-driven drug discovery.
+        Hi, I’m Claire, a neuroscience and computer science double major at Trinity University with a strong interest in computational neuroscience and biophysics. My main research focus is virtual drug discovery for diseases involving protein aggregation, and I’m especially excited about how machine learning and gamification can optimize research and drug discovery. In the Cheng Lab, we work on discovering multi-targeted drugs that can disaggregate Tau protein in Alzheimer’s disease using a virtual drug discovery pipeline. After finishing my undergraduate degrees in May 2027, I plan to continue my training by joining a Ph.D. program.
     </p>
-
-    <div class="hero-buttons">
-        <a href="https://www.linkedin.com/in/cclaireking/" class="button">LinkedIn</a>
-        <a href="https://github.com/claireking10" class="button secondary">GitHub</a>
-        <a href="./resume.html" class="button">Resume</a>
-    </div>
-</section>
-<section class="protein-section">
-    <img
-        id="protein"
-        src="./images/proteins/ezgif-frame-001.png"
-        alt="Rotating protein structure"
-    />
-</section>
-<section class="skills container">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <div>Java</div>
-        <div>Python</div>
-        <div>C#</div>
-        <div>R</div>
-        <div>HTML + CSS</div>
-        <div>Javascript</div>
-        <div>Unity</div>
-        <div>GROMACS</div>
-        <div>MD-Task</div>
-        <div>Git</div>
-        <div>Molecular Dynamics</div>
-        <div></div>
-    </div>
+  </div>
 </section>
 
-</main>
+<section id="research">
+  <h2>Research Focus</h2>
+  <div class="panel">
+    <p>• Molecular dynamics simulation analysis</p>
+    <p>• Computational modeling of aggregation</p>
+    <p>• Structure-based virtual screening</p>
+    <p>• Pipeline development for early therapeutic discovery</p>
+  </div>
+</section>
+
+<section id="resume">
+  <h2 class="section-title">Experience</h2>
+  <div class="panel">
+    <div class="resume-item">
+      <h3>Undergraduate Researcher – Trinity University / Cheng Lab</h3>
+      <span>Fall 2023 – Present</span>
+      <p>Computational modeling and analysis for virtual drug discovery.</p>
+    </div>
+
+    <div class="resume-item">
+      <h3>Neuroscience (B.S.), Computer Science (B.A.) – Trinity University</h3>
+      <span>2023 – 2027</span>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <h2 class="section-title">Presentations</h2>
+  <div class="panel">
+    <div class="resume-item">
+      <h3>Chemistry Undergraduate Research Showcase – University of Texas, San Antonio</h3>
+      <span>October 2025</span>
+    </div>
+
+    <div class="resume-item">
+      <h3>James L. Roberts Memorial Symposium – Trinity University</h3>
+      <span>October 2025</span>
+      <p>2nd Place Poster Presentation Award</p>
+    </div>
+
+    <div class="resume-item">
+      <h3>Student Undergraduate Research Symposium – Trinity University</h3>
+      <span>July 2025</span>
+    </div>
+  </div>
+</section>
 
 <footer>
-    <p>cking6@trinity.edu</p>
+  Claire King | cking6@trinity.edu
 </footer>
 
 </body>
